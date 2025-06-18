@@ -66,10 +66,31 @@ function fetchCafes(center) {
   document.getElementById("generateBtn").textContent = "Generating...";
   document.getElementById("itinerary").innerHTML = "";
 
+  const cafeTypes = [
+    "cafe",
+    "coffee_shop",
+    "bakery",
+    "tea_house",
+    "cat_cafe",
+    "dog_cafe",
+    "acai_shop",
+    "bagel_shop",
+    "brunch_restaurant",
+    "breakfast_restaurant",
+    "dessert_shop",
+    "dessert_restaurant",
+    "juice_shop",
+    "chocolate_shop",
+    "confectionery",
+    "deli",
+    "donut_shop",
+    "ice_cream_shop"
+    // Optionally include: cafeteria, wine_bar, bar, pub
+  ];
   const request = {
     location: center,
     radius,
-    type: "cafe",
+    type: cafeTypes,
   };
 
   placesService.nearbySearch(request, (results, status) => {
@@ -184,6 +205,15 @@ function renderItinerary() {
 }
 
 window.onload = () => {
+  // Theme toggle
+  const themeBtn = document.getElementById('themeToggle');
+  let night = false;
+  themeBtn.onclick = () => {
+    night = !night;
+    document.body.classList.toggle('nightmode', night);
+    themeBtn.textContent = night ? '☀️ Light Mode' : '🌙 Night Mode';
+  };
+
   // Dynamically load Google Maps API with callback to initMap
   const script = document.createElement('script');
   script.src =
