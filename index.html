@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cafe Crawl Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>☕ Cafe Crawl Generator</h1>
+    <div class="controls">
+      <label>
+        Stops:
+        <input type="number" id="numStops" min="3" max="5" value="4" />
+      </label>
+      <label>
+        Radius (meters):
+        <input type="number" id="radius" min="500" max="3000" step="100" value="1000" />
+      </label>
+      <button id="generateBtn">Generate Crawl</button>
+    </div>
+    <div id="map" style="width:100%;height:400px;margin:20px 0;"></div>
+    <div id="itinerary"></div>
+  </div>
+  <div class="footer">
+    <span>Made with <span style="color:#a9744f;font-weight:bold;">vibe coding</span> on <span style="color:#24292f;font-weight:bold;">GitHub Copilot</span></span>
+  </div>
+  <script src="app.js"></script>
+  <!-- Google Maps API is now loaded dynamically in app.js -->
+</body>
+</html>

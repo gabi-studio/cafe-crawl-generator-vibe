@@ -1,0 +1,171 @@
+body {
+  min-height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  font-family: 'Quicksand', 'Comic Sans MS', system-ui, sans-serif;
+  background: linear-gradient(135deg, #f5e9da 0%, #e7d3c1 100%);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+.container {
+  flex: 1 0 auto;
+  min-height: 0;
+  width: 100vw;
+  max-width: none;
+  margin: 0;
+  background: rgba(255,255,255,0.92);
+  border-radius: 0;
+  box-shadow: none;
+  padding: 36px 0 60px 0; /* Add bottom padding for footer space */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+h1 {
+  text-align: center;
+  margin-bottom: 18px;
+  font-size: 2.7rem;
+  color: #7c4a1e;
+  letter-spacing: 1px;
+  font-family: 'Pacifico', cursive, 'Comic Sans MS', system-ui, sans-serif;
+  text-shadow: 1px 2px 0 #fff6, 0 2px 8px #e7d3c1;
+}
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 18px;
+  width: 100%;
+}
+.top-group, .field-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+label {
+  font-weight: 600;
+  color: #a9744f;
+  font-size: 1.1rem;
+}
+input[type="number"],
+input[type="text"] {
+  margin-left: 6px;
+  border: 2px solid #e7d3c1;
+  border-radius: 8px;
+  padding: 7px 12px;
+  width: 150px;
+  font-size: 1rem;
+  background: #f5e9da;
+  color: #7c4a1e;
+  transition: border 0.2s;
+}
+input[type="number"]:focus,
+input[type="text"]:focus {
+  border: 2px solid #a9744f;
+  outline: none;
+}
+button, .copy-btn, .refresh-btn, .gmaps-btn {
+  background: linear-gradient(90deg, #a9744f 0%, #d7b899 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 22px;
+  font-size: 1.05rem;
+  font-family: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #e7d3c155;
+  margin-left: 10px;
+  margin-bottom: 8px;
+  transition: background 0.2s, transform 0.1s;
+}
+button:hover, .copy-btn:hover, .refresh-btn:hover, .gmaps-btn:hover {
+  background: linear-gradient(90deg, #d7b899 0%, #a9744f 100%);
+  transform: translateY(-2px) scale(1.04);
+}
+#map {
+  width: 90vw !important;
+  max-width: 1200px;
+  height: 420px !important;
+  margin: 24px 0 16px 0;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px #a9744f33;
+  border: 3px solid #e7d3c1;
+}
+#itinerary {
+  display: none;
+  margin-top: 18px;
+  background: #f5e9da;
+  border-radius: 16px;
+  padding: 24px 32px;
+  box-shadow: 0 2px 12px #e7d3c155;
+  color: #7c4a1e;
+  font-size: 1.1rem;
+  max-width: 700px;
+  width: 90vw;
+}
+#itinerary.visible {
+  display: block;
+}
+#itinerary h2 {
+  color: #a9744f;
+  font-family: 'Pacifico', cursive, 'Comic Sans MS', system-ui, sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+#itinerary ol {
+  padding-left: 22px;
+}
+#itinerary li {
+  margin-bottom: 10px;
+  font-size: 1.08rem;
+}
+.inst {
+  font-size: 0.98rem;
+  color: #a9744f;
+  margin-left: 4px;
+  font-style: italic;
+}
+.copy-btn, .refresh-btn, .gmaps-btn {
+  margin-left: 0;
+  margin-right: 10px;
+}
+.footer {
+  flex-shrink: 0;
+  width: 100vw;
+  text-align: center;
+  padding: 18px 0 14px 0;
+  font-size: 1.08rem;
+  color: #a9744f;
+  background: rgba(245, 233, 218, 0.7);
+  font-family: 'Quicksand', 'Comic Sans MS', system-ui, sans-serif;
+  letter-spacing: 0.5px;
+  position: relative;
+  left: 0;
+  bottom: 0;
+  z-index: 100;
+  box-shadow: 0 -2px 12px #e7d3c155;
+  /* Remove margin-top if present */
+}
+@media (max-width: 700px) {
+  .container {
+    padding: 12px 0 48px 0;
+  }
+  #map, #itinerary {
+    width: 98vw !important;
+    padding: 12px 8px;
+  }
+  .controls {
+    gap: 10px;
+  }
+  .footer {
+    font-size: 0.98rem;
+    padding: 10px 0 8px 0;
+  }
+}
